@@ -6,7 +6,7 @@ let count = document.querySelector("#counter")
 
 
 function startCount(){
-     count.innerText++
+    count.innerText++
     console.log(count.innerText)
 }
 
@@ -14,34 +14,32 @@ const setInter = setInterval(startCount, 1000);
 
 
 // minus func - decrease the displayed # in the counter 
-function decreaseNum(){
-  const minusBtn = document.querySelector("#minus")
+ const minusBtn = document.querySelector("#minus")
   minusBtn.addEventListener('click', () => {
     count.innerText--
     console.log(count.innerText)
   })
-}
-decreaseNum()
 
 
-// plus func- increasing the displayed count number
-function increaseNum(){
+
+
+// plus func- increasing the displayed # in the counter
   const plusBtn = document.querySelector("#plus")
     plusBtn.addEventListener('click', () => {
       count.innerText++
       console.log(count.innerText)
     })
-  }
-  increaseNum()
+
+
 
 
 // A "like" button (❤️) that adds a "like" for the number that is currently 
 //displayed by the timer
 
 const heart = document.querySelector("#heart");
-console.log(heart)
+  console.log(heart)
 const likes = document.querySelector(".likes");
-console.log(likes)
+  console.log(likes)
 heart.addEventListener('click', () => {
    likes.innerText++
 })
@@ -55,15 +53,15 @@ Pause the counter, which should:
 */
 
 const pause = document.querySelector("#pause")
-console.log(pause)
+  console.log(pause)
 
  pause.addEventListener('click', () => {
     const buttons = document.getElementsByTagName("button")
     for(const button of buttons){
         if (pause.id !== button.id){
         button.disabled = true;
-    }
-    }
+    } 
+  }
     clearInterval(setInter) 
     pause.innerText = 'resume' 
 })
@@ -71,20 +69,30 @@ console.log(pause)
 
 
 // Click the "resume" button to restart the counter and re-enable the buttons.
+// target the #pause button with value of 'resume'
 
-// ??????????????
+
+// target pause button labeled 'resume'
 
 
 
 
 // Leave comments on my gameplay, such as: "Wow, what a fun game this is."
+// Then innerText or append child to div with Comments with #list .comments
+
+
+const commentList = document.getElementById("list")
+const paraList = document.createElement("p")
+
 
 const form = document.getElementById('comment-form')
 form.addEventListener("submit", (e) => {
      e.preventDefault();
-    console.log(document.querySelector("#comment-input").value)
+    let commentValue = document.querySelector("#comment-input").value
+    paraList.innerText = commentValue
+    commentList.appendChild(paraList)
+    console.log(commentValue)
 })
 
- 
 
-// Then innerText or append child to div with Comments as h3
+
