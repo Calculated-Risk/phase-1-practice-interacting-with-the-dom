@@ -13,13 +13,9 @@ function startCount(){
 const setInter = setInterval(startCount, 1000);
 
 
-
-// Plus and Minus buttons that increment or decrement the counter
-const minusBtn = document.querySelector("#minus")
-const plusBtn = document.querySelector("#plus")
-
 // minus func - decrease the displayed # in the counter 
 function decreaseNum(){
+  const minusBtn = document.querySelector("#minus")
   minusBtn.addEventListener('click', () => {
     count.innerText--
     console.log(count.innerText)
@@ -30,6 +26,7 @@ decreaseNum()
 
 // plus func- increasing the displayed count number
 function increaseNum(){
+  const plusBtn = document.querySelector("#plus")
     plusBtn.addEventListener('click', () => {
       count.innerText++
       console.log(count.innerText)
@@ -75,17 +72,18 @@ console.log(pause)
 
 // Click the "resume" button to restart the counter and re-enable the buttons.
 
-
+// ??????????????
 
 
 
 
 // Leave comments on my gameplay, such as: "Wow, what a fun game this is."
 
-const form = document.querySelector('#comment-form').addEventListener(("submit", (e) => {
-    e.preventDefault();
+const form = document.getElementById('comment-form')
+form.addEventListener("submit", (e) => {
+     e.preventDefault();
     console.log(document.querySelector("#comment-input").value)
-}))
+})
 
  
 
