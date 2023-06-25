@@ -6,12 +6,11 @@ let count = document.querySelector("#counter")
 
 
 function startCount(){
-    if(count.innerText === 4) clearInterval(count.innerText)// why doesn't this work?
-    else count.innerText++
+     count.innerText++
     console.log(count.innerText)
 }
 
-setInterval(startCount, 1000);
+const setInter = setInterval(startCount, 1000);
 
 
 
@@ -19,7 +18,7 @@ setInterval(startCount, 1000);
 const minusBtn = document.querySelector("#minus")
 const plusBtn = document.querySelector("#plus")
 
-// minus - decrease the displayed count number
+// minus func - decrease the displayed # in the counter 
 function decreaseNum(){
   minusBtn.addEventListener('click', () => {
     count.innerText--
@@ -29,7 +28,7 @@ function decreaseNum(){
 decreaseNum()
 
 
-// plus - increasing the displayed count number
+// plus func- increasing the displayed count number
 function increaseNum(){
     plusBtn.addEventListener('click', () => {
       count.innerText++
@@ -47,7 +46,7 @@ console.log(heart)
 const likes = document.querySelector(".likes");
 console.log(likes)
 heart.addEventListener('click', () => {
-     likes.innerText++
+   likes.innerText++
 })
 
 /*         
@@ -61,6 +60,33 @@ Pause the counter, which should:
 const pause = document.querySelector("#pause")
 console.log(pause)
 
-pause.addEventListener('click', () => console.log('clicked'))
+ pause.addEventListener('click', () => {
+    const buttons = document.getElementsByTagName("button")
+    for(const button of buttons){
+        if (pause.id !== button.id){
+        button.disabled = true;
+    }
+    }
+    clearInterval(setInter) 
+    pause.innerText = 'resume' 
+})
 
 
+
+// Click the "resume" button to restart the counter and re-enable the buttons.
+
+
+
+
+
+
+// Leave comments on my gameplay, such as: "Wow, what a fun game this is."
+
+const form = document.querySelector('#comment-form').addEventListener(("submit", (e) => {
+    e.preventDefault();
+    console.log(document.querySelector("#comment-input").value)
+}))
+
+ 
+
+// Then innerText or append child to div with Comments as h3
