@@ -6,8 +6,6 @@ const heartButton = document.querySelector("#heart");
 const pauseButton = document.querySelector("#pause");
 const likes = document.querySelector(".likes");
 const commentList = document.getElementById("list");
-const listItem = document.createElement("li");
-const unorgList = document.createElement('ul')
 const form = document.getElementById('comment-form')
 
 
@@ -74,10 +72,8 @@ Pause the counter, which should:
 
 
 
-
 // Leave comments on my gameplay, such as: "Wow, what a fun game this is."
 // Then innerText or append child to div with Comments with #list .comments
-
 
 
 
@@ -85,8 +81,9 @@ Pause the counter, which should:
 form.addEventListener("submit", (e) => {
      e.preventDefault();
     let commentValue = document.querySelector("#comment-input").value
-    listItem.innerText = commentValue
-    commentList.appendChild(listItem)
-    console.log(commentValue)
+    const p = document.createElement("p");
+    p.innerText = commentValue
+    commentList.appendChild(p)
+    console.log(p)
 })
 
